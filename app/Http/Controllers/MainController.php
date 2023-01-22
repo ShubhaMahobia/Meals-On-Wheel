@@ -20,8 +20,7 @@ class MainController extends Controller
         return view('success');
     }
 
-    //rzp_test_hL4Etd0bXHkmO1
-    //Gluvl9s5qfTBfbL1Ar8tCsnG
+    
 
 
     public function payment(Request $request){
@@ -29,7 +28,7 @@ class MainController extends Controller
         $name = $request->input('name');
         $amount = $request->input('amount');
 
-        $api = new Api('rzp_test_27dLDb1K3q2fPL', 'wipJ46Lt7NwlnrrDuqyLVcc9');
+        $api = new Api('//YOUR API KEY', '//YOUR API CODE');
         $order  = $api->order->create(array('receipt' => '123', 'amount' => $amount *100 , 'currency' => 'INR')); // Creates order
         $orderId = $order['id']; 
 
